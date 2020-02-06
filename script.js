@@ -58,85 +58,84 @@ function passwordLength (){userPasswordLength = parseInt(userLength);
 }
 
 function selectArray () {
-    //---- reduce if statement to what david showed you
+  
 
-
-  if (userCharactersLower === true && userCharactersUpper !== true && userCharactersNumber !== true && userCharactersSpecial !== true) {  
+  if (userCharactersLower && !userCharactersUpper && !userCharactersNumber && !userCharactersSpecial) {  
       for (var i = 0; i < userPasswordLength; i++){
           finalPassword += lowerCase[Math.floor(Math.random() * lowerCase.length)];
           console.log("finalPassword", finalPassword);
       }
-  } else if (userCharactersLower === true && userCharactersUpper === true && userCharactersNumber !== true && userCharactersSpecial !== true) {
+  } else if (userCharactersLower && userCharactersUpper && !userCharactersNumber && !userCharactersSpecial) {
       for (var i = 0; i < userPasswordLength; i++){
           var joinedArray = lowerCase.concat(upperCase);
           finalPassword += joinedArray[Math.floor(Math.random() * joinedArray.length)];
           console.log("finalPassword", finalPassword);
       }
-  } else if (userCharactersLower === true && userCharactersUpper === true && userCharactersNumber === true && userCharactersSpecial !== true) {
+  } else if (userCharactersLower && userCharactersUpper && userCharactersNumber && !userCharactersSpecial) {
       for (var i = 0; i < userPasswordLength; i++){
           var joinedArray = lowerCase.concat(upperCase, numbers);
           finalPassword += joinedArray[Math.floor(Math.random() * joinedArray.length)];
           console.log("finalPassword", finalPassword);
       }
-  } else if (userCharactersLower === true && userCharactersUpper === true && userCharactersNumber !== true && userCharactersSpecial === true) {
+  } else if (userCharactersLower && userCharactersUpper && !userCharactersNumber && userCharactersSpecial) {
       for (var i = 0; i < userPasswordLength; i++){
           var joinedArray = lowerCase.concat(upperCase, special);
           finalPassword += joinedArray[Math.floor(Math.random() * joinedArray.length)];
           console.log("finalPassword", finalPassword);
       }
-  } else if (userCharactersLower === true && userCharactersUpper === true && userCharactersNumber === true && userCharactersSpecial === true) {
+  } else if (userCharactersLower && userCharactersUpper && userCharactersNumber && userCharactersSpecial) {
       for (var i = 0; i < userPasswordLength; i++){
           var joinedArray = lowerCase.concat(upperCase, numbers, special);
           finalPassword += joinedArray[Math.floor(Math.random() * joinedArray.length)];
           console.log("finalPassword", finalPassword);
       }
-  } else if (userCharactersLower === true && userCharactersUpper !== true && userCharactersNumber === true && userCharactersSpecial !== true) {
+  } else if (userCharactersLower && !userCharactersUpper && userCharactersNumber && !userCharactersSpecial) {
       for (var i = 0; i < userPasswordLength; i++){
           var joinedArray = lowerCase.concat(numbers);
           finalPassword += joinedArray[Math.floor(Math.random() * joinedArray.length)];
           console.log("finalPassword", finalPassword);
       }
-  } else if (userCharactersLower === true && userCharactersUpper !== true && userCharactersNumber === true && userCharactersSpecial === true) {
+  } else if (userCharactersLower && !userCharactersUpper && userCharactersNumber && userCharactersSpecial) {
       for (var i = 0; i < userPasswordLength; i++){
           var joinedArray = lowerCase.concat(numbers, special);
           finalPassword += joinedArray[Math.floor(Math.random() * joinedArray.length)];
           console.log("finalPassword", finalPassword);
       }
-  } else if (userCharactersLower === true && userCharactersUpper !== true && userCharactersNumber !== true && userCharactersSpecial === true) {
+  } else if (userCharactersLower && !userCharactersUpper && !userCharactersNumber && userCharactersSpecial) {
       for (var i = 0; i < userPasswordLength; i++){
           var joinedArray = lowerCase.concat(special);
           finalPassword += joinedArray[Math.floor(Math.random() * joinedArray.length)];
           console.log("finalPassword", finalPassword);
       }
-  } else if (userCharactersLower !== true && userCharactersUpper === true && userCharactersNumber !== true && userCharactersSpecial !== true) {
+  } else if (!userCharactersLower && userCharactersUpper && !userCharactersNumber && !userCharactersSpecial) {
       for (var i = 0; i < userPasswordLength; i++){
           finalPassword += upperCase[Math.floor(Math.random() * upperCase.length)];
           console.log("finalPassword", finalPassword);
       }
-  } else if (userCharactersLower !== true && userCharactersUpper === true && userCharactersNumber === true && userCharactersSpecial !== true) {
+  } else if (!userCharactersLower && userCharactersUpper  && userCharactersNumber  && !userCharactersSpecial) {
       for (var i = 0; i < userPasswordLength; i++){
           var joinedArray = upperCase.concat(numbers);
           finalPassword += joinedArray[Math.floor(Math.random() * joinedArray.length)];
           console.log("finalPassword", finalPassword);
       }
-  } else if (userCharactersLower !== true && userCharactersUpper === true && userCharactersNumber === true && userCharactersSpecial === true) {
+  } else if (!userCharactersLower && userCharactersUpper && userCharactersNumber && userCharactersSpecial) {
       for (var i = 0; i < userPasswordLength; i++){
           var joinedArray = upperCase.concat(numbers, special);
           finalPassword += joinedArray[Math.floor(Math.random() * joinedArray.length)];
           console.log("finalPassword", finalPassword);
       }
-  } else if (userCharactersLower !== true && userCharactersUpper !== true && userCharactersNumber === true && userCharactersSpecial !== true) {
+  } else if (!userCharactersLower && !userCharactersUpper && userCharactersNumber && !userCharactersSpecial) {
       for (var i = 0; i < userPasswordLength; i++){
           finalPassword += numbers[Math.floor(Math.random() * numbers.length)];
           console.log("finalPassword", finalPassword);
       }
-  } else if (userCharactersLower !== true && userCharactersUpper !== true && userCharactersNumber === true && userCharactersSpecial === true) {
+  } else if (!userCharactersLower && !userCharactersUpper && userCharactersNumber && userCharactersSpecial) {
       for (var i = 0; i < userPasswordLength; i++){
           var joinedArray = numbers.concat(special);
           finalPassword += joinedArray[Math.floor(Math.random() * joinedArray.length)];
           console.log("finalPassword", finalPassword);
       }
-  } else if (userCharactersLower !== true && userCharactersUpper !== true && userCharactersNumber !== true && userCharactersSpecial === true) {
+  } else if (!userCharactersLower && !userCharactersUpper && !userCharactersNumber && userCharactersSpecial) {
       for (var i = 0; i < userPasswordLength; i++){
           finalPassword += special[Math.floor(Math.random() * special.length)];
           console.log("finalPassword", finalPassword);
@@ -148,4 +147,3 @@ function selectArray () {
 function setPassword (){
   document.getElementById("password").innerHTML = finalPassword;
 }
-
